@@ -27,3 +27,4 @@ es:
       empty_list_title: "Registro de actividad"
       empty_list_message: "Desde este apartado puedes ver una lista de todos las acciones que se realizan en Ubiquo. Puedes ver el detalle de la acción o borrar el registro."
       confirm_removal: "¿Estás seguro de querer eliminar este registro de actividad?"
+      destroyed: "Registro de actividad eliminado con éxito"

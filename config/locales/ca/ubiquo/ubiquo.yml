@@ -27,3 +27,4 @@ ca:
       empty_list_title: "Registre d'activitat"
       empty_list_message: "Des d'aquest apartat pots veure una llista amb totes les accions que s'han realitzat a l'Ubiquo. Pots veure el detall de l'acció o esborrar el registre."
       confirm_removal: "Estas segur de voler eliminar aquest registre d'activitat?"
+      destroyed: "Registro d'activitat eliminat amb èxit"
