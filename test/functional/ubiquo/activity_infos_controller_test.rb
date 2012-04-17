@@ -9,6 +9,17 @@ class Ubiquo::ActivityInfosControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:activity_infos)
   end
+
+  def test_should_get_index_filtered
+    activity_info = create_activity_info
+    activity_info2 = create_activity_info(:created_at => Time.now - 10.days)
+    get :index, :filter_date_start => (activity_info.created_at -1.day).strftime("%d/%m/%Y")
+    assert_equal 1, assigns(:activity_infos).size
+    get :index, :filter_date_start => "20/10/#{Time.now.year+1}" # None starts on the future
+    assert_equal 0, assigns(:activity_infos).size
+    assert_response :success
+    assert_not_nil assigns(:activity_infos)
+  end
   
   def test_should_get_index_with_permission
     login_with_permission(:activity_info_management)

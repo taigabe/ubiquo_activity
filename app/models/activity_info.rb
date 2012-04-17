@@ -6,8 +6,8 @@ class ActivityInfo < ActiveRecord::Base
   named_scope :controller, lambda {|value| {:conditions => {:controller => value}}}
   named_scope :action, lambda {|value| {:conditions => {:action => value}}}
   named_scope :status, lambda {|value| {:conditions => {:status => value}}}
-  named_scope :date_start, lambda {|value| {:conditions => ["created_at >= ?", value]}}
-  named_scope :date_end, lambda {|value| {:conditions => ["created_at <= ?", value]}}
+  named_scope :date_start, lambda {|value| {:conditions => ["created_at >= ?", parse_date(value)]}}
+  named_scope :date_end, lambda {|value| {:conditions => ["created_at <= ?", parse_date(value)]}}
   named_scope :user, lambda {|value| {:conditions => {:ubiquo_user_id => value}}}
   
 filtered_search_scopes :enable => [:controller, :action, :status, :date_start, :date_end, :user]
