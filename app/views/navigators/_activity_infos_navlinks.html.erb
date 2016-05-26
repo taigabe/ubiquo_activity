@@ -5,6 +5,11 @@
       link.url = ubiquo_activity_infos_path
       link.highlights_on({:controller => "ubiquo/activity_infos", :action => 'index'})
     end
+    navigator.add_link do |link|
+      link.text = (t("ubiquo.search_log.title"))
+      link.url = ubiquo_search_index_path
+      link.highlights_on({:controller => "ubiquo/search", :action => 'index'})
+    end
   end
 %>
 <%= render_link_navigator(navigator_section) %>
