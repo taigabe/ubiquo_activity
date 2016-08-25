@@ -3,10 +3,10 @@ require 'ubiquo_activity'
 Ubiquo::Plugin.register(:ubiquo_activity, directory, config) do |config|
   config.add :activities_elements_per_page
   config.add_inheritance :activities_elements_per_page, :elements_per_page
-  config.add :activity_info_access_control, lambda { 
+  config.add :activity_info_access_control, lambda { |_|
     access_control :DEFAULT => 'activity_info_management'
   }
-  config.add :activity_info_permit, lambda {
+  config.add :activity_info_permit, lambda { |_|
     permit?('actitivy_info_management')
   }
   config.add :activities_date_filter_enabled, true  
